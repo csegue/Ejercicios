@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "cd293a69-3f04-41c7-a002-110c262cc7fe",
+		"name": "PHP_13",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "reserva Listado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/reservas/listado",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"reservas",
+						"listado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reserva Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pension_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "room_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "cliente_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "fecha_ent",
+							"value": "25/10/2021",
+							"type": "text"
+						},
+						{
+							"key": "fecha_sal",
+							"value": "30/10/2021",
+							"type": "text"
+						},
+						{
+							"key": "estado_hab",
+							"value": "libre",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip}}/reservas",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"reservas"
+					],
+					"query": [
+						{
+							"key": "fecha_ent",
+							"value": "25/10/2021",
+							"disabled": true
+						},
+						{
+							"key": "fecha_sal",
+							"value": "30/10/2021",
+							"disabled": true
+						},
+						{
+							"key": "estado_hab",
+							"value": "libre",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reserva Put",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pension_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "room_id",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "cliente_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "fecha_ent",
+							"value": "01/11/2021",
+							"type": "text"
+						},
+						{
+							"key": "fecha_sal",
+							"value": "10/11/2021",
+							"type": "text"
+						},
+						{
+							"key": "estado_hab",
+							"value": "ocupada",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip}}/reservas/8",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"reservas",
+						"8"
+					],
+					"query": [
+						{
+							"key": "pension_id",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "room_id",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "cliente_id",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "fecha_ent",
+							"value": "25/10/2021",
+							"disabled": true
+						},
+						{
+							"key": "fecha_sal",
+							"value": "30/10/2021",
+							"disabled": true
+						},
+						{
+							"key": "estado_hab",
+							"value": "libre",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reserva Delete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

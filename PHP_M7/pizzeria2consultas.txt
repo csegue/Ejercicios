@@ -1,0 +1,55 @@
+USE pizzeria2;
+
+#Identifica provincias con localidades
+SELECT PROVINCIA.LocaProv,NomProv, LOCALIDAD.NomLoca 
+FROM PROVINCIA, LOCALIDAD 
+WHERE PROVINCIA.LocaProv = LOCALIDAD.NomLoca;   
+
+#Clientes por provincia
+SELECT PROVINCIA.NomProv, CLIENTE.NomCli, Apellido, Direccion, CodPostal, Telefono, NomLoca 
+FROM PROVINCIA, CLIENTE 
+WHERE PROVINCIA.LocaProv = CLIENTE.NomLoca;   
+
+#Por provincia y localidad
+SELECT PEDIDO.Cliente, CLIENTE.id, NomCli, Apellido, PROVINCIA.LocaProv, NomProv 
+FROM PEDIDO, CLIENTE, PROVINCIA 
+WHERE PEDIDO.Cliente = CLIENTE.id AND PROVINCIA.LocaProv = CLIENTE.NomLoca;   
+
+SELECT PEDIDO.id, Cliente, ARTICULOSPEDIDO.RefPddo, ProPddo, CantPddo
+FROM PEDIDO, ARTICULOSPEDIDO
+WHERE PEDIDO.id = ARTICULOSPEDIDO.RefPddo; 
+
+#Pedido con articulos  y precio
+SELECT PEDIDO.id, Cliente, ARTICULOSPEDIDO.id, RefPddo, ProPddo, CantPddo, PRODUCTOS.RefProd, NomProd, DesProd, PreProd, CatProd, CantPddo * PreProd
+FROM PEDIDO, ARTICULOSPEDIDO, PRODUCTOS 
+WHERE PEDIDO.id = ARTICULOSPEDIDO.RefPddo AND PRODUCTOS.RefProd = ARTICULOSPEDIDO.ProPddo;   
+
+
+SELECT PEDIDO.id, Cliente, TIENDA.TieDir, TieCP, TieLoc 
+FROM PEDIDO, TIENDA
+WHERE PEDIDO.Tienda = TIENDA.id;
+
+SELECT TIENDA.id, EMPLEADOS.EmpNom, EmpApe, CATEMPLEADO.Categoria
+FROM TIENDA, EMPLEADOS, CATEMPLEADO
+WHERE TIENDA.id = EMPLEADOS.EmpTienda AND EMPLEADOS.EmpCat = CATEMPLEADO.id;
+
+#Creación del pedido Vs Cliente
+SELECT PEDIDO.id, Fecha, Hora, Tienda, CLIENTE.NomCli, Apellido, Direccion, CodPostal, Telefono, NomLoca,  PROVINCIA.NomProv 
+FROM PEDIDO, CLIENTE, PROVINCIA
+WHERE PEDIDO.id=1 AND PEDIDO.Cliente=1 AND PEDIDO.Cliente = CLIENTE.id AND PROVINCIA.LocaProv = CLIENTE.NomLoca;
+
+#Creación del pedido Vs productos
+SELECT PEDIDO.id, ARTICULOSPEDIDO.RefPddo, ProPddo, CantPddo, PRODUCTOS.RefProd, NomProd, DesProd, PreProd
+FROM PEDIDO, ARTICULOSPEDIDO, PRODUCTOS
+WHERE PEDIDO.id=1 AND PEDIDO.Cliente=1 AND PEDIDO.id = ARTICULOSPEDIDO.RefPddo AND  PRODUCTOS.RefProd = ARTICULOSPEDIDO.ProPddo;
+
+#hora de entrega de los pedidos
+SELECT ARTICULOSPEDIDO.RefPddo, ProPddo, CantPddo, ENTREGA.EntPedido, EntHora
+FROM   ARTICULOSPEDIDO, ENTREGA
+WHERE  ARTICULOSPEDIDO.RefPddo= ENTREGA.EntPedido;
+
+
+
+
+
+

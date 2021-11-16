@@ -1,0 +1,103 @@
+USE pizzeria2;
+#Introducir clientes
+INSERT INTO cliente(NomCli,Apellido,Direccion,CodPostal,Telefono,NomLoca) VALUES('JUAN','GUTIERREZ','GRANVIA,25','08025','934444444','TIANA');
+INSERT INTO cliente(NomCli,Apellido,Direccion,CodPostal,Telefono,NomLoca) VALUES('PEDRO','FERNANDEZ','DIAGONAL,12','08333','935555555','SABADELL');
+INSERT INTO cliente(NomCli,Apellido,Direccion,CodPostal,Telefono,NomLoca) VALUES('CARLOS','ACTOIR','PLAZA ESPAÑA, 20','08000','936666666','ALP');
+INSERT INTO cliente(NomCli,Apellido,Direccion,CodPostal,Telefono,NomLoca) VALUES('MARIA','AGUADO','LONDRES, 200','08777','937777777','REUS');
+INSERT INTO cliente(NomCli,Apellido,Direccion,CodPostal,Telefono,NomLoca) VALUES('LUPITA','AITOR','CORPUS, 85','08128','938888888','SOLSONA');
+
+
+#Introducir Localidades
+INSERT INTO localidad(NomLoca) VALUES('TIANA');
+INSERT INTO localidad(NomLoca) VALUES('SABADELL');
+INSERT INTO localidad(NomLoca) VALUES('REUS');
+INSERT INTO localidad(NomLoca) VALUES('SOLSONA');
+INSERT INTO localidad(NomLoca) VALUES('ALP');
+
+#Introducir Provincias
+INSERT INTO provincia(NomProv,NumProv,LocaProv) VALUES('BARCELONA','1','SABADELL');
+INSERT INTO provincia(NomProv,NumProv,LocaProv) VALUES('BARCELONA','1','TIANA');
+INSERT INTO provincia(NomProv,NumProv,LocaProv) VALUES('TARRAGONA','2','REUS');
+INSERT INTO provincia(NomProv,NumProv,LocaProv) VALUES('LERIDA','3','SOLSONA');
+INSERT INTO provincia(NomProv,NumProv,LocaProv) VALUES('GERONA','4','ALP');
+
+
+#Introducimos Pedido
+INSERT INTO pedido(Cliente, Fecha, Hora, Tienda) VALUES('1','2021-05-12','18:00','1');
+INSERT INTO pedido(Cliente, Fecha, Hora, Tienda) VALUES('2','2021-05-13','19:00','2');
+INSERT INTO pedido(Cliente, Fecha, Hora, Tienda) VALUES('3','2021-05-14','20:00','1');
+INSERT INTO pedido(Cliente, Fecha, Hora, Tienda) VALUES('4','2021-05-15','21:00','2');
+INSERT INTO pedido(Cliente, Fecha, Hora, Tienda) VALUES('5','2021-05-16','22:00','2');
+
+#Introducimos productos
+INSERT INTO productos(RefProd, NomProd, DesProd, ImgProd, PreProd, CatProd) VALUES('100','Hamburguesa Completa','Hamburguesa 200grs','img01.png','10','0');
+INSERT INTO productos(RefProd, NomProd, DesProd, ImgProd, PreProd, CatProd) VALUES('101','Hamburguesa sin queso','Hamburguesa 150grs','img02.png','8','0');
+INSERT INTO productos(RefProd, NomProd, DesProd, ImgProd, PreProd, CatProd) VALUES('102','Coca.Cola','Refresco cola','img03.png','1.5','0');
+INSERT INTO productos(RefProd, NomProd, DesProd, ImgProd, PreProd, CatProd) VALUES('103','Pizza 4 quesos','Mozzarela y 3 más','img04.png','11','1');
+INSERT INTO productos(RefProd, NomProd, DesProd, ImgProd, PreProd, CatProd) VALUES('104','Pizza Margarita','La básica','img05.png','10','2');
+INSERT INTO productos(RefProd, NomProd, DesProd, ImgProd, PreProd, CatProd) VALUES('105','Pizza Tropical','Con Piña','img06.png','9','2');
+
+#Introducimos categorias
+INSERT INTO categorias(RefCat, NomCat) VALUES('1','Masa Fina');
+INSERT INTO categorias(RefCat, NomCat) VALUES('2','Masa Gorda');
+INSERT INTO categorias(RefCat, NomCat) VALUES('0','Sin Categoría');
+
+#Tabla del pedido
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('1','100','2');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('1','101','1');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('1','102','4');
+
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('2','100','4');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('2','102','4');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('2','104','4');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('2','105','4');
+
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('3','100','1');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('3','102','1');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('3','104','1');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('3','103','1');
+
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('4','100','1');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('4','103','1');
+
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('5','102','1');
+INSERT INTO articulospedido(RefPddo, ProPddo, CantPddo) VALUES('5','104','1');
+
+INSERT INTO tienda(TieDir, TieCP, TieLoc) VALUES('C/Letamendi','08036','SABADELL');
+INSERT INTO tienda(TieDir, TieCP, TieLoc) VALUES('C/Pujol,4','08037','REUS');
+
+INSERT INTO empleados(EmpNom, EmpApe, EmpNif, EmpTfn, EmpTienda, EmpCat) VALUES('Bruno','Elrayo','35000000N','691555555','1','1');
+INSERT INTO empleados(EmpNom, EmpApe, EmpNif, EmpTfn, EmpTienda, EmpCat) VALUES('Elena','Cocinillas','36000000N','691555557','1','2');
+INSERT INTO empleados(EmpNom, EmpApe, EmpNif, EmpTfn, EmpTienda, EmpCat) VALUES('Oscar','Redondo','37000000N','691555556','1','3');
+INSERT INTO empleados(EmpNom, EmpApe, EmpNif, EmpTfn, EmpTienda, EmpCat) VALUES('Esther','Barras','38000000N','691555550','1','4');
+
+INSERT INTO empleados(EmpNom, EmpApe, EmpNif, EmpTfn, EmpTienda, EmpCat) VALUES('Carlos','Reyes','35000000N','691555555','2','1');
+INSERT INTO empleados(EmpNom, EmpApe, EmpNif, EmpTfn, EmpTienda, EmpCat) VALUES('Maribel','Navarro','36000000N','691555557','2','2');
+INSERT INTO empleados(EmpNom, EmpApe, EmpNif, EmpTfn, EmpTienda, EmpCat) VALUES('Lola','Carras','37000000N','691555556','2','3');
+INSERT INTO empleados(EmpNom, EmpApe, EmpNif, EmpTfn, EmpTienda, EmpCat) VALUES('Alex','Bert','38000000N','691555550','2','4');
+
+INSERT INTO catempleado(Categoria) VALUES('Repartidor');
+INSERT INTO catempleado(Categoria) VALUES('Cocinera');
+INSERT INTO catempleado(Categoria) VALUES('Pizzero');
+INSERT INTO catempleado(Categoria) VALUES('Camarero');
+
+INSERT INTO entrega(EntPedido, EntTienda, EntEmpleado, EntHora) VALUES('1','1','1','18:30');
+INSERT INTO entrega(EntPedido, EntTienda, EntEmpleado, EntHora) VALUES('2','2','1','19:30');
+INSERT INTO entrega(EntPedido, EntTienda, EntEmpleado, EntHora) VALUES('3','1','4','20:00');
+INSERT INTO entrega(EntPedido, EntTienda, EntEmpleado, EntHora) VALUES('4','2','1','21:30');
+INSERT INTO entrega(EntPedido, EntTienda, EntEmpleado, EntHora) VALUES('5','2','4','22:00');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+body           {margin: 0px; padding: 0px;} /*background-color:#E7ECDE;}  #CFD3C6  #D3D8C4 */
+body           {font-family: 'Roboto', sans-serif; font-size: 1em; }
+
+/*----TAMAÑO IMAGENES  ---------------------------------------------------------------------------------------------- */
+.header1_logo       { width:  67px; height:  46px;}  /* Original Reducida: 67x46px  - 1.94KB */
+.elemDestc img      { width: 308px; height: 206px;}  /* Original reducida: 308x206px  - 293.8KB */
+.elemDestc iframe   { width: 308px; height: 206px;}  /* youtube */
+section img         { width: 339px; height: 216px;}  /* Original reducida: 339x216px  - 20.5KB */
+
+/*----FUENTES ------------------------------------------------------------------------------------------------------- */
+
+
+/*----MENU (DOS NIVELES):  ----------------------------------------------------------------------------------------- */
+header              { display: flex; flex-flow: column nowrap; box-shadow: 0 0 0 1px #888888, 0px 1px 10px }
+#header1            { display: flex; flex-flow: row wrap; justify-content:space-between;}       /* LOGO + ICONOS */
+#header2 ul         { display: flex; flex-flow: row wrap; justify-content:space-between; }      /* MENU DESPLEGABLE */
+.header1_redes      { display: flex; flex-flow: row wrap; }                                     /* ICONOS */
+
+#header1 a          { margin: 5px 15px 0 0;}                                                    /* espacios de los iconos */
+.header1_logo       { margin: 5px 0 0 15px;}
+#header2 ul         { margin: 5px 0 15px 0;}                                                    /* posiciono a del menu desplegable */
+#header2 a:hover    { border-style: none none ridge none; border-width: 1px; border-color: #888888;}
+
+
+/*----CREO UNOS MARCOS PARA VISUALIZAR POSICIONES AL DISEÑAR LA PAGINA ---------------------------------------------- */
+header              { border: 0px solid red;        width: 100%; height: 90px; margin-bottom:  20px;}
+#header1            { border: 0px solid yellow;     width: 100%; height: 70%;}
+#header2            { border: 0px solid blue;       width: 100%; height: 30%; }
+.header1_redes      { border: 0px solid black; }
+.header1_redes a    { border: 0px solid black; }
+.header1_logo       { border: 0px solid black; }
+#header2 li         { border: 0px solid black; }
+
+#header2 ul li a    { text-decoration: none;}                                                   /* quito el subrallado de a */
+#header2 ul         { list-style: none;}                                                        /* quito las viñetas */
+
+
+/*----NAV --------------------------------------------------------------------------------------------------------------*/
+.elemDestc          { display: flex; flex-flow: row wrap; justify-content:space-around; margin-bottom:  20px;}  /* Elementos Destacados */
+.elemDestc_img      { border: 1px solid #D3D8C4; float:inherit; text-align: center;}                         /* Recolocar text con imagen */
+
+/*----SECCTION --------------------------------------------------------------------------------------------------------------*/
+
+section         { display: flex; flex-flow: row wrap; justify-content:center;}       /* Elementos Destacados */
+section         { border: 1px solid #D3D8C4; float:inherit; text-align: center; background-color: #D3D8C4;}  /* Recolocar text con imagen */
+
+/*----FOOTER --------------------------------------------------------------------------------------------------------------*/
+
+footer          { background-color: #7D8078;}
